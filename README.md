@@ -1,13 +1,13 @@
 # DigiChrom: Simulation-Based Parameter Identification Workflow
 
-[![Project: DigiChrom](https://img.shields.io/badge/Project-DigiChrom-blue.svg)](https://github.com/CMD-HSO/digichrom-sim-workflow)
+[![Project: DigiChrom](https://img.shields.io/badge/Project-DigiChrom-blue.svg)](https://www.material-digital.de/project/25)
 [![Framework: MaterialDigital](https://img.shields.io/badge/Framework-MaterialDigital-green.svg)](https://material-digital.de/)
 [![Language: Python 3](https://img.shields.io/badge/Python-3.x-yellow.svg)](https://www.python.org/)
 [![FE Solver: Abaqus](https://img.shields.io/badge/FEA-Abaqus-red.svg)](https://www.3ds.com/products-services/simulia/products/abaqus/)
 
 Automated workflow for identifying non-linear elasto-plastic constitutive material parameters (combined kinematic and isotropic hardening) of electroplated coatings based on instrumented indentation testing (nano/micro-indentation) and Finite Element Analysis (FEA).
 
-Developed at **Offenburg University of Applied Sciences (HS Offenburg)** as part of the **DigiChrom** research initiative within the **MaterialDigital** platform.
+Developed at **Offenburg University of Applied Sciences (HSO)** as part of the **DigiChrom** project within the **MaterialDigital** platform.
 
 ---
 
@@ -29,12 +29,12 @@ The workflow calibrates elasto-plastic constitutive models by minimizing the dis
 
 1. Experimental Data (.txt) -> (Time, Force, Displacement)
 2. Main Optimization Loop (Python / SLSQP):
-   - Sample / Update Material Parameters (Re, Qinf, b, C, gamma)
+   - Sample / Update Material Parameters of plasticity model (Re, Qinf, b, C, gamma)
    - Write Abaqus Include Files (indent_para.inp, indent_mat.inp, ...)
    - Execute FEA Solver (Abaqus Job Execution)
    - Extract Reaction Forces & Displacements via Post-Processing Script
    - Compute Least-Squares Objective Function (Exp vs. Sim)
-3. Output -> Optimized Parameter Set & Fitted Curves (.out/.png)
+3. Output -> Optimized Parameter Set & Fitted Curves 
 
 ---
 
