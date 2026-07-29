@@ -1,3 +1,85 @@
+# DigiChrom: Simulation-Based Parameter Identification Workflow
+
+[![Project: DigiChrom](https://img.shields.io/badge/Project-DigiChrom-blue.svg)](https://github.com/CMD-HSO/digichrom-sim-workflow)
+[![Framework: MaterialDigital](https://img.shields.io/badge/Framework-MaterialDigital-green.svg)](https://material-digital.de/)
+[![Language: Python 3](https://img.shields.io/badge/Python-3.x-yellow.svg)](https://www.python.org/)
+[![FE Solver: Abaqus](https://img.shields.io/badge/FEA-Abaqus-red.svg)](https://www.3ds.com/products-services/simulia/products/abaqus/)
+
+Automated workflow for identifying non-linear elasto-plastic constitutive material parameters (combined kinematic and isotropic hardening) of electroplated coatings based on instrumented indentation testing (nano/micro-indentation) and Finite Element Analysis (FEA).
+
+Developed at **Offenburg University of Applied Sciences (HS Offenburg)** as part of the **DigiChrom** research initiative within the **MaterialDigital** platform.
+
+---
+
+## 📌 Overview
+
+This repository provides an automated parameter identification framework that couples numerical optimization algorithms in **Python** with finite element simulations in **Dassault Systèmes Abaqus**. 
+
+The workflow calibrates elasto-plastic constitutive models by minimizing the discrepancy between experimentally measured load-displacement curves (from instrumented indentation tests) and simulated responses.
+
+### Key Features
+- **Combined Hardening Calibration:** Identifies parameters for non-linear isotropic ($R_e, Q_{\infty}, b$) and kinematic ($C, \gamma$) hardening plasticity models.
+- **Robust Optimization:** Utilizes Sequential Least Squares Programming (SLSQP via `scipy.optimize`) with initial parameter sampling (bounded Gaussian noise) to avoid local minima.
+- **Abaqus FEA Coupling:** Fully automated generation of Abaqus keywords, job execution, and post-processing via Abaqus Python scripts.
+- **Multi-Start Optimization:** Capability to launch multiple initial parameter sets to evaluate sensitivity and ensure optimization convergence.
+
+---
+
+## ⚙️ Workflow Architecture
+                   ┌──────────────────────────────┐
+                   │   Experimental Data (.txt)   │
+                   │ (Time, Force, Displacement)  │
+                   └──────────────┬───────────────┘
+                                  │
+                                  ▼
+┌───────────────────────────────────────────────────────────────────────────┐
+│ Main Optimization Loop (Python / SLSQP)                                   │
+│                                                                           │
+│  1. Sample / Update Material Parameters (Re, Qinf, b, C, gamma)           │
+│  2. Write Abaqus Include Files (indent_para.inp, indent_mat.inp, ...)     │
+│  3. Execute FEA Solver (Abaqus Job Execution)                             │
+│  4. Extract Reaction Forces & Displacements via Post-Processing Script    │
+│  5. Compute Least-Squares Objective Function (Exp vs. Sim)                │
+└──────────────────────────────┬────────────────────────────────────────────┘
+                               │ Iterative Loop
+                               ▼
+┌──────────────────────────────┐
+│  Optimized Parameter Set &   │
+│    Fitted Curves (.out/.png) │
+└──────────────────────────────┘
+
+---
+
+## 📁 Repository Structure
+
+```text
+├── Main_Optimization.py           # Main execution script (parameter setup & SLSQP loop)
+├── DriveModel_Seifert.py          # Interface to handle Abaqus job submission & post-processing
+├── ParameterStructure_Seifert.py  # Data class handling parameter bounds, scaling, and mapping
+├── PlotResults_Seifert.py         # Utility module for plotting experimental vs. simulated curves
+├── _postProc_IndPlast_Seifert.py  # Abaqus CAE GUI/noGUI post-processing script (node extraction)
+├── indent_glob.inp                # Global Abaqus base template (mesh, boundary conditions)
+├── data_indent.txt                # Sample experimental indentation data
+└── README.md                      # Documentation
+
+
+🚀 Requirements & InstallationPrerequisitesPython 3.x with the following packages:Bashpip install numpy scipy matplotlib
+Dassault Systèmes Abaqus (must be executable via system command line abaqus).Running the WorkflowClone the repository:Bashgit clone [https://github.com/CMD-HSO/digichrom-sim-workflow.git](https://github.com/CMD-HSO/digichrom-sim-workflow.git)
+cd digichrom-sim-workflow
+Ensure your experimental data file (data_indent.txt) is formatted properly:Column 0: Time ($t$)Column 1: Measured Reaction Force ($F_{\text{exp}}$)Column 2: Controlled Displacement ($u_{\text{cntr}}$)Column 3: Temperature ($T$)Run the parameter identification workflow:Bashpython Main_Optimization.py
+🔬 Constitutive Model ParametersThe optimization calibrates the following mechanical parameters for combined hardening:ParameterSymbolDescriptionE_________$E$Young's Modulusnue_______$\nu$Poisson's RatioRe________$\sigma_0$ / $R_e$Initial Yield StressQinf______$Q_{\infty}$Isotropic Hardening Maximum Extensionb_________$b$Isotropic Hardening Rate ParameterC1________$C_1$Initial Kinematic Hardening ModulusCinf1_____$C_1 / \gamma_1$Kinematic Hardening Parameter Ratio📄 Citation & AcknowledgmentsThis work is part of the research project DigiChrom, funded within the German national initiative MaterialDigital (BMBF).If you use this workflow or codebase in your scientific work, please cite it as follows:Code-Snippet@misc{Harter2026DigiChrom,
+  author       = {Harter, Janik and Seifert, Thomas},
+  title        = {{DigiChrom: Simulation-based characterization workflow for electroplated coatings}},
+  year         = {2026},
+  publisher    = {GitHub},
+  journal      = {GitHub Repository},
+  howpublished = {\url{[https://github.com/CMD-HSO/digichrom-sim-workflow](https://github.com/CMD-HSO/digichrom-sim-workflow)}}
+}
+📧 Contact & LicenseAuthors: Janik Harter, Prof. Dr.-Ing. Thomas SeifertInstitution: Offenburg University of Applied Sciences (HS Offenburg) – Mechanics & Material Digital GroupLicense: Open Source (e.g., MIT License)
+
+
+<!--
+
 # Projektname
 
 Kurze Beschreibung des Projekts, was es tut und welchen Zweck es erfüllt.
@@ -215,3 +297,4 @@ Fügen Sie hier Screenshots hinzu, die die Änderung verdeutlichen.
 - [ ] Passende Tests wurden hinzugefügt
 - [ ] Alle neuen und bestehenden Tests bestehen
 ```
+-->
