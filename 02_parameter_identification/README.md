@@ -47,9 +47,11 @@ The workflow calibrates elasto-plastic constitutive models by minimizing the dis
 - Interpolate_CMDHSO_260731.py: Interpolation
 - ParameterStructure_CMDHSO_260731.py: Data structure managing parameter bounds, mapping & scaling
 - PlotResults_CMDHSO_260731.py: Utility module for plotting experimental vs. simulated curves
+
 **ABAQUS**
 - indent_glob.inp: Base Abaqus FE input file
-- indent_mesh.inp: Base Abaqus FE mesh 
+- indent_mesh.inp: Base Abaqus FE mesh
+
 **experimental data**
 - data_indent.txt: Sample experimental indentation dataset
 
