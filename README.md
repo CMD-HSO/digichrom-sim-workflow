@@ -48,3 +48,4 @@ If you use this workflow or code in your research, please cite it as:
   journal      = {GitHub Repository},
   howpublished = {\url{[https://github.com/CMD-HSO/digichrom-sim-workflow](https://github.com/CMD-HSO/digichrom-sim-workflow)}}
 }
+```
