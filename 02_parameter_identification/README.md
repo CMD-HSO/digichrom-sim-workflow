@@ -7,7 +7,7 @@
 
 Automated workflow for identifying non-linear elasto-plastic constitutive material parameters (combined kinematic and isotropic hardening) of electroplated coatings based on instrumented indentation testing (nano/micro-indentation) and Finite Element Analysis (FEA).
 
-Developed at **Offenburg University of Applied Sciences (HSO)** as part of the **DigiChrom** project within the **MaterialDigital** platform.
+Developed at research group **Computational Mechanics and Digital Materials CMD** of **Offenburg University of Applied Sciences (HSO)** as part of the **DigiChrom** project within the **MaterialDigital** platform.
 
 ---
 
@@ -94,7 +94,7 @@ The workflow optimizes non-linear elasto-plastic parameters for **combined harde
 
 ## 📄 Citation & Acknowledgments
 
-This research is part of the **DigiChrom** project, funded within the German national initiative **MaterialDigital** (BMBF).
+This research is part of the DigiChrom project, funded within the German national initiative MaterialDigital by the German Federal Ministry of Research, Technology and Space (BMFTR) (grant number 13XP5195I).
 
 If you use this workflow or code in your research, please cite it as:
 
