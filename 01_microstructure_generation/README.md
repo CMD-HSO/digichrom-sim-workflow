@@ -1,4 +1,4 @@
-# DigiChrom: Module 01 – Microstructure Generation
+# DigiChrom: Microstructure Generation
 
 [![Project: DigiChrom](https://img.shields.io/badge/Project-DigiChrom-blue.svg)](https://github.com/CMD-HSO/digichrom-sim-workflow)
 [![Framework: MaterialDigital](https://img.shields.io/badge/Framework-MaterialDigital-green.svg)](https://material-digital.de/)
