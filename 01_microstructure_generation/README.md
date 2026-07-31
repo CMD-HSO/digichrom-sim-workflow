@@ -22,11 +22,11 @@ Developed at research group **Computational Mechanics and Digital Materials CMD*
 
 ## 📌 Acknowledgments & Origin
 
+This research is part of the DigiChrom project, funded within the German national initiative MaterialDigital by the German Federal Ministry of Research, Technology and Space (BMFTR) (grant number 13XP5195I).
+
 This module is directly based on and incorporates the **DPGS (Dispersion Particle Generator and Simulation)** framework developed by **Thitichai Janpheng** ('tjanp').
 
 - **Original Repository:** [tjanp/DPGS-Dispersion-Particle-Generator-and-Simulation](https://github.com/tjanp/DPGS-Dispersion-Particle-Generator-and-Simulation)
-
-This research is part of the DigiChrom project, funded within the German national initiative MaterialDigital by the German Federal Ministry of Research, Technology and Space (BMFTR) (grant number 13XP5195I).
 
 If you use this workflow or code in your research, please cite it as:
 
@@ -39,9 +39,7 @@ If you use this workflow or code in your research, please cite it as:
   journal      = {GitHub Repository},
   howpublished = {\url{[https://github.com/CMD-HSO/digichrom-sim-workflow/tree/main/01_microstructure_generation](https://github.com/CMD-HSO/digichrom-sim-workflow/tree/main/01_microstructure_generation)}}
 }
-
-
----
+```
 
 # DPGS-Dispersion-Particle-Generator-and-Simulation
 
