@@ -24,7 +24,7 @@ Developed at research group **Computational Mechanics and Digital Materials CMD*
 
 This research is part of the DigiChrom project, funded within the German national initiative MaterialDigital by the German Federal Ministry of Research, Technology and Space (BMFTR) (grant number 13XP5195I).
 
-This module is directly based on and incorporates the **DPGS (Dispersion Particle Generator and Simulation)** framework developed by **Thitichai Janpheng** ('tjanp').
+This module is directly based on and incorporates the **DPGS (Dispersion Particle Generator and Simulation)** framework developed by **Thitichai Janpheng** (`tjanp`).
 
 - **Original Repository:** [tjanp/DPGS-Dispersion-Particle-Generator-and-Simulation](https://github.com/tjanp/DPGS-Dispersion-Particle-Generator-and-Simulation)
 
