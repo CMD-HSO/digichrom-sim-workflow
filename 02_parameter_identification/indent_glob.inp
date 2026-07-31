@@ -1,0 +1,84 @@
+*RESTART, WRITE, FREQ=5
+**
+** parameter definition
+***********************
+**
+*INCLUDE, INPUT=indent_para.inp
+**
+** mesh definition
+******************
+**
+*INCLUDE, INPUT=indent_mesh.inp
+**
+** material definition of specimen
+**********************************
+**
+*SOLID SECTION, ELSET=specimen, MATERIAL=PLASTIC
+*INCLUDE, INPUT=indent_mat.inp
+** 
+**sphere definition
+*******************
+**
+*NSET, NSET=sphere
+**node in origin of *.mesh 
+ 9000000
+*SURFACE, TYPE=SEGMENTS, NAME=master
+ START,   1.0,  1.0
+ CIRCL,   0.0,  0.0,  0.0,  1.0
+ CIRCL,  -1.0,  1.0,  0.0,  1.0
+*RIGID BODY, ANALYTICAL SURFACE=master, REF NODE=9000000
+**
+** contact definition
+*********************
+**
+*SURFACE, TRIM=YES, TYPE=ELEMENT, NAME=slave
+ specimen_contact,
+*CONTACT PAIR, INTERACTION=friction
+ slave, master
+*SURFACE INTERACTION, NAME=friction
+ 1.0,
+*FRICTION
+ 0.0,
+***SURFACE BEHAVIOR, PRESSURE-OVERCLOSURE=EXPONENTIAL
+**0.045, 1000.0
+** "standard"
+**0.0005, 1000.0
+**c0, p0
+**
+** boundary conditions
+**********************
+**
+*BOUNDARY
+ 9000000, 1, , 0.0
+ 9000000, 6, , 0.0
+**specimen_bottom, 1, , 0.0
+ specimen_bottom, 2, , 0.0
+ specimen_left, XSYMM
+**
+** amplitudes and time points
+*****************************
+**
+*INCLUDE, INPUT=indent_ampl.inp
+**
+** initial conditions
+*********************
+**
+*Initial Conditions, type=TEMPERATURE
+ all_nodes, <TempIni>
+
+** loading step
+****************
+**
+*STEP, AMPLITUDE=RAMP, UNSYMM=YES, NLGEOM, INC=1000
+*STATIC
+ <TimeIncIni>, <TimeStep>, <TimeIncMin>, <TimeIncMax>
+*BOUNDARY, amplitude=A-disp
+ 9000000, 2, , -1.0
+*Temperature, amplitude=A-temp
+ all_nodes, 1.
+**
+** definition of output
+***********************
+*INCLUDE, INPUT=indent_outp.inp
+**
+*END STEP
