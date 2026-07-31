@@ -22,6 +22,15 @@ The characterization framework is structured into three sequential modules:
 3. **`03_finite_element_analysis/`** 
    Application of identified material models to full-scale component simulations and micromechanical failure evaluation.
 
+### Workflow Orchestration with pyiron
+
+To support the standards of the **MaterialDigital** platform, this repository includes an exemplary orchestration script using **pyiron** (`pyiron_orchestrator_example.py`). 
+
+This script demonstrates how the individual execution steps—from microstructure generation (Module 01) and parameter identification (Module 02) to the finite element stress analysis (Module 03)—can be coupled, automated, and logged in a FAIR-compliant data structure.
+
+> [!NOTE]
+> **Implementation Status:** The provided pyiron script is a conceptual template and example implementation. It demonstrates the data flow and interface logic between modules, but cannot be executed directly out-of-the-box with the current data files in modules 01, 02, and 03 without adapting local path references and specific function wrappers.
+
 ---
 
 ## 📄 Citation & Acknowledgments
