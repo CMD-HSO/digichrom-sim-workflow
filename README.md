@@ -5,7 +5,7 @@
 [![Language: Python 3](https://img.shields.io/badge/Python-3.x-yellow.svg)](https://www.python.org/)
 [![FE Solver: Abaqus](https://img.shields.io/badge/FEA-Abaqus-red.svg)](https://www.3ds.com/products-services/simulia/products/abaqus/)
 
-This repository contains the integrated modular simulation workflow for electroplated coatings developed at **Offenburg University of Applied Sciences (HS Offenburg)** within the **DigiChrom** initiative (MaterialDigital).
+This repository contains the integrated modular simulation workflow for electroplated coatings developed at the research group **Computational Mechanics and Digital Materials CMD** of **Offenburg University of Applied Sciences (HSO)** within the **DigiChrom** initiative (MaterialDigital).
 
 ---
 
@@ -26,7 +26,7 @@ The characterization framework is structured into three sequential modules:
 
 ## 📄 Citation & Acknowledgments
 
-This research is part of the **DigiChrom** project, funded within the German national initiative **MaterialDigital** (BMBF).
+This research is part of the **DigiChrom** project, funded within the German national initiative **MaterialDigital** by the German Federal Ministry of Research, Technology and Space (BMFTR) (grant number 13XP5195I).
 
 If you use this workflow or code in your research, please cite it as:
 
