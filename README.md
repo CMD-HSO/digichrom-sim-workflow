@@ -1,4 +1,35 @@
-# DigiChrom: Simulation-Based Parameter Identification Workflow
+# DigiChrom: Integrated Simulation-Based Characterization Workflow
+
+[![Project: DigiChrom](https://img.shields.io/badge/Project-DigiChrom-blue.svg)](https://github.com/CMD-HSO/digichrom-sim-workflow)
+[![Framework: MaterialDigital](https://img.shields.io/badge/Framework-MaterialDigital-green.svg)](https://material-digital.de/)
+[![Language: Python 3](https://img.shields.io/badge/Python-3.x-yellow.svg)](https://www.python.org/)
+[![FE Solver: Abaqus](https://img.shields.io/badge/FEA-Abaqus-red.svg)](https://www.3ds.com/products-services/simulia/products/abaqus/)
+
+This repository contains the integrated modular simulation workflow for electroplated coatings developed at **Offenburg University of Applied Sciences (HS Offenburg)** within the **DigiChrom** initiative (MaterialDigital).
+
+---
+
+## 🏗️ Workflow Architecture
+
+The characterization framework is structured into three sequential modules:
+
+1. **`01_microstructure_generation/`** *(Under continuous development)*
+   Generating synthetic or experimental-based digital representations of coating microstructures.
+   
+2. **`02_parameter_identification/`** *(Currently available)*
+   Automated calibration of non-linear elasto-plastic constitutive parameters (combined hardening) via FEA-coupled optimization using experimental indentation data.
+   
+3. **`03_finite_element_analysis/`** *(Under continuous development)*
+   Application of identified material models to full-scale component simulations and micromechanical failure evaluation.
+
+---
+
+## 🚀 Getting Started
+
+To explore or run the parameter identification workflow, navigate to the respective subfolder:
+
+```bash
+cd 02_parameter_identification# DigiChrom: Simulation-Based Parameter Identification Workflow
 
 [![Project: DigiChrom](https://img.shields.io/badge/Project-DigiChrom-blue.svg)](https://www.material-digital.de/project/25)
 [![Framework: MaterialDigital](https://img.shields.io/badge/Framework-MaterialDigital-green.svg)](https://material-digital.de/)
