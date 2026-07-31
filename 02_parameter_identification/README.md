@@ -40,14 +40,20 @@ The workflow calibrates elasto-plastic constitutive models by minimizing the dis
 
 ## 📁 Repository Structure
 
-- _IndPlast_Seifert_250601b.py: Main optimization script (parameter setup & SLSQP execution)
-- DriveModel_Seifert_250301.py: Interface handling Abaqus input generation, execution & post-processing
-- ParameterStructure_Seifert.py: Data structure managing parameter bounds, mapping & scaling
-- PlotResults_Seifert.py: Utility module for plotting experimental vs. simulated curves
-- _postProc_IndPlast_Seifert.py: Abaqus post-processing script (extracts load-displacement data)
-- indent_glob.inp: Base Abaqus FE mesh and boundary condition template
+**python**
+- _IndPlast_CMDHSO_260731.py: Main optimization script (parameter setup & SLSQP execution)
+- _postProc_IndPlast_CMDHSO_260731.py: Abaqus post-processing script (extracts load-displacement data), may require modifications depending whether TEACHING, RESEARCH, ... licence is available
+- DriveModel_CMDHSO_260731.py: Interface handling Abaqus input generation, execution & post-processing
+- Interpolate_CMDHSO_260731.py: Interpolation
+- ParameterStructure_CMDHSO_260731.py: Data structure managing parameter bounds, mapping & scaling
+- PlotResults_CMDHSO_260731.py: Utility module for plotting experimental vs. simulated curves
+**ABAQUS**
+- indent_glob.inp: Base Abaqus FE input file
+- indent_mesh.inp: Base Abaqus FE mesh 
+**experimental data**
 - data_indent.txt: Sample experimental indentation dataset
-- README.md: Documentation
+
+README.md: Documentation
 
 ---
 
@@ -72,7 +78,7 @@ The workflow calibrates elasto-plastic constitutive models by minimizing the dis
    - Column 3: Temperature ($T$)
 
 3. Launch the parameter optimization process:
-   `python _IndPlast_Seifert_250601b.py`
+   `python _IndPlast_CMDHSO_260731.py`
 
 ---
 
