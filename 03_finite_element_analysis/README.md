@@ -32,6 +32,8 @@ The workflow covers the pipeline from CAD/STEP-based Abaqus model build to stati
 - `simulation_config.txt`: Key-value configuration file containing material properties (Young's modulus, Poisson's ratio for matrix and particles) and mesh control parameters.
 - `../matrix.step` & `../particle_cut.step`: Input geometry STEP files for the matrix and particle domains. Obtained form "01_microstructure_generation".
 
+*Note: Currently, linear elastic matrix material is considered. In a future release, the an elastic-plastic matrix material (using the model parameters from 02_parameter_identification) will be available.*
+
 ### Execution & Batch Scripts
 - `Workflow*.bat`: Windows batch script automating the execution of Abaqus post-processing extraction for both `MATRIXSET` and `PARTICLESET` and managing output file renaming (`Data4Analysis_E_MATRIX.dat` and `Data4Analysis_E_PARTICLE.dat`).
 
