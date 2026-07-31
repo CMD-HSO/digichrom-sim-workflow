@@ -13,13 +13,13 @@ This repository contains the integrated modular simulation workflow for electrop
 
 The characterization framework is structured into three sequential modules:
 
-1. **`01_microstructure_generation/`** *(Under continuous development)*
+1. **`01_microstructure_generation/`** 
    Generating synthetic or experimental-based digital representations of coating microstructures.
    
-2. **`02_parameter_identification/`** *(Currently available)*
+2. **`02_parameter_identification/`** 
    Automated calibration of non-linear elasto-plastic constitutive parameters (combined hardening) via FEA-coupled optimization using experimental indentation data.
    
-3. **`03_finite_element_analysis/`** *(Under continuous development)*
+3. **`03_finite_element_analysis/`** 
    Application of identified material models to full-scale component simulations and micromechanical failure evaluation.
 
 ---
