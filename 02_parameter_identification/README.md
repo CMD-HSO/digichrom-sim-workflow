@@ -93,10 +93,10 @@ The workflow optimizes non-linear elasto-plastic parameters for **combined harde
 | E_________ | $E$ | Young's Modulus |
 | nue_______ | $\nu$ | Poisson's Ratio |
 | Re________ | $\sigma_0$ / $R_e$ | Initial Yield Stress |
-| Qinf______ | $Q_{\infty}$ | Isotropic Hardening Maximum Extension |
+| Qinf______ | $Q_{\infty}$ | Isotropic Hardening Saturation Value |
 | b_________ | $b$ | Isotropic Hardening Rate Parameter |
 | C1________ | $C_1$ | Initial Kinematic Hardening Modulus |
-| Cinf1_____ | $C_1 / \gamma_1$ | Kinematic Hardening Parameter Ratio |
+| Cinf1_____ | $C_1 / \gamma_1$ | Kinematic Hardening Saturation Value |
 
 ---
 
